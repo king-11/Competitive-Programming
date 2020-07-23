@@ -1,0 +1,17 @@
+{
+  "mainSolution": {
+    "value": "/home/target-x/CS/Competitive Programming/Codeforces - Codeforces Round #207 (Div. 1)/A. Knight Tournament/fastio.cpp"
+  },
+  "bruteSolution": {},
+  "generator": {},
+  "checker": {},
+  "companionConfig": {
+    "value": {
+      "name": "A. Knight Tournament",
+      "group": "Codeforces - Codeforces Round #207 (Div. 1)",
+      "url": "https://codeforces.com/contest/356/problem/A",
+      "memoryLimit": 256,
+      "timeLimit": 3000
+    }
+  }
+}

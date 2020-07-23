@@ -19,11 +19,17 @@
 #define vi vector<lld>
 #define si set<lld>
 #define endl "\n"
-//#define int long long
+#define int long long
 #define pii pair<int, int>
 #define minq priority_queue<int, vector<int>, greater<int>>
 #define mem(a, val) memset(a, val, sizeof(a))
 #define X 1000000009
+#define le(x) scanf("%lld", &x)
+#define lle(x, y) scanf("%lld %lld", &x, &y)
+#define print(x) printf("%lld ", x)
+#define println(x) printf("%lld\n", x)
+#define SpeedForce ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0)
+
 using namespace std;
 
 int32_t main()
@@ -33,7 +39,6 @@ int32_t main()
      freopen("output.txt", "w", stdout);
 #endif
 
-     ios_base::sync_with_stdio(false);
-     cin.tie(0);
-     cout.tie(0);
+     SpeedForce;
+     
 }
