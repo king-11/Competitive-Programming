@@ -23,13 +23,13 @@
 #define pii pair<int, int>
 #define minq priority_queue<int, vector<int>, greater<int>>
 #define mem(a, val) memset(a, val, sizeof(a))
-#define X 1000000009
 #define scani(x) scanf("%lld", &x)
 #define scani2(x, y) scanf("%lld %lld", &x, &y)
 #define scani3(x, y, z) scanf("%lld %lld %lld", &x, &y, &z);
 #define print(x) printf("%lld ", x)
 #define println(x) printf("%lld\n", x)
 #define SpeedForce ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0)
+#define MOD 1000000009
 
 using namespace std;
 
