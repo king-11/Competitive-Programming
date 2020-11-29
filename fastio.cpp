@@ -2,7 +2,7 @@
  * @ Author: Lakshya Singh
  * @ Create Time: 2020-10-14 14:56:31
  * @ Modified by: Target_X
- * @ Modified time: 2020-11-29 19:42:43
+ * @ Modified time: 2020-11-29 19:43:56
  * @ Description:
  */
 
@@ -41,46 +41,9 @@
 #define SpeedForce ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0)
 #define MOD 1000000009
 
-template <typename T>
-T gcd(T a, T b) { return (b ? __gcd(a, b) : a); }
-template <typename T>
-T lcm(T a, T b) { return (a * b) / gcd(a, b); }
-int mod_neg(int a, int b, int c)
-{
-     int res;
-     if (abs(a - b) < c)
-          res = a - b;
-     else
-          res = (a - b) % c;
-     return (res < 0 ? res + c : res);
-}
-template <typename T>
-T extended_euclid(T a, T b, T &x, T &y)
-{
-     T xx = 0, yy = 1;
-     y = 0;
-     x = 1;
-     while (b)
-     {
-          T q = a / b, t = b;
-          b = a % b;
-          a = t;
-          t = xx;
-          xx = x - q * xx;
-          x = t;
-          t = yy;
-          yy = y - q * yy;
-          y = t;
-     }
-     return a;
-}
-template <typename T>
-T mod_inverse(T a, T n)
-{
-     T x, y, z = 0;
-     T d = extended_euclid(a, n, x, y);
-     return (d > 1 ? -1 : mod_neg(x, z, n));
-}
+// available snippets
+// phi, seive, exponentiation, gcd, extended euclid, dfs, path lca, factorization
+// kmp search, segtree, dsu, ordered set, power2
 
 using namespace std;
 using namespace __gnu_pbds;
