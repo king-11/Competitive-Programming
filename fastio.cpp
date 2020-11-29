@@ -7,6 +7,8 @@
  */
 
 #include <bits/stdc++.h>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
 
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 #define repA(i, a, n) for (int i = a; i <= (n); ++i)
@@ -81,6 +83,7 @@ T mod_inverse(T a, T n)
 }
 
 using namespace std;
+using namespace __gnu_pbds;
 
 const int N = 3e5 + 11;
 
