@@ -2,7 +2,7 @@
  * @ Author: Lakshya Singh
  * @ Create Time: 2020-10-14 14:56:31
  * @ Modified by: Target_X
- * @ Modified time: 2020-12-22 19:36:52
+ * @ Modified time: 2020-12-19 16:50:41
  * @ Description:
  */
 
@@ -16,7 +16,7 @@
 #define tr(a, x) for (auto &a : x)
 #define all(c) c.begin(), c.end()
 
-#define int long long
+#define lld long long
 #define pb push_back
 #define mp make_pair
 #define eb emplace_back
@@ -26,9 +26,10 @@
 #define present(c, x) (c.find(x) != c.end())
 #define cpresent(c, x) (find(all(c), x) != c.end())
 
-#define vi vector<int>
-#define si set<int>
+#define vi vector<lld>
+#define si set<lld>
 #define endl "\n"
+#define int long long
 #define pii pair<int, int>
 #define minq priority_queue<int, vector<int>, greater<int>>
 #define mem(a, val) memset(a, val, sizeof(a))
@@ -57,4 +58,20 @@ int32_t main()
      // #endif
 
      SpeedForce;
+     int t;
+     cin >> t;
+     while (t--)
+     {
+          int n;
+          cin >> n;
+          set<int> s1;
+          rep(i, n)
+          {
+               int x;
+               cin >> x;
+               s1.insert(x);
+          }
+
+          cout << s1.size() << endl;
+     }
 }
