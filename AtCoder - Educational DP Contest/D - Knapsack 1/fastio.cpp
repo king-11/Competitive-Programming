@@ -44,4 +44,25 @@ int32_t main()
      int n, w;
      cin >> n >> w;
 
+     vector<pii> v1(n);
+     tr(a, v1)
+     {
+          cin >> a.f >> a.s;
+     }
+
+     int dp[n + 1][w + 1];
+
+     repA(i, 0, n)
+     {
+          repA(j, 0, w)
+          {
+               if (i == 0 || j == 0)
+                    dp[i][j] = 0;
+               else if (v1[i - 1].f > j)
+                    dp[i][j] = dp[i - 1][j];
+               else
+                    dp[i][j] = max(v1[i - 1].s + dp[i - 1][j - v1[i - 1].f], dp[i - 1][j]);
+          }
+     }
+     cout << dp[n][w];
 }

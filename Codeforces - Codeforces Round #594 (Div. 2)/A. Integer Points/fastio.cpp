@@ -2,7 +2,7 @@
  * @ Author: Lakshya Singh
  * @ Create Time: 2020-10-14 14:56:31
  * @ Modified by: Target_X
- * @ Modified time: 2020-12-27 11:59:26
+ * @ Modified time: 2020-12-25 10:54:13
  * @ Description:
  */
 
@@ -57,4 +57,40 @@ int32_t main()
      // #endif
 
      SpeedForce;
+     int t;
+     cin >> t;
+     while (t--)
+     {
+          int even = 0, odd = 0;
+          int n;
+          cin >> n;
+          vi v1(n);
+          tr(a, v1)
+          {
+               cin >> a;
+               if (a & 1)
+                    odd++;
+               else
+               {
+                    even++;
+               }
+          }
+
+          int m;
+          int even1 = 0, odd1 = 0;
+          cin >> m;
+          vi v2(m);
+          tr(a, v2)
+          {
+               cin >> a;
+               if (a & 1)
+                    odd1++;
+               else
+               {
+                    even1++;
+               }
+          }
+
+          cout << even * even1 + odd * odd1 << endl;
+     }
 }
