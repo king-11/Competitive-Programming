@@ -2,7 +2,7 @@
  * @ Author: Lakshya Singh
  * @ Create Time: 2020-10-14 14:56:31
  * @ Modified by: Target_X
- * @ Modified time: 2020-12-27 11:59:26
+ * @ Modified time: 2020-12-28 22:12:34
  * @ Description:
  */
 
@@ -51,10 +51,5 @@ const int N = 3e5 + 11;
 
 int32_t main()
 {
-     // #ifndef ONLINE_JUDGE
-     //      freopen("input.txt", "r", stdin);
-     //      freopen("output.txt", "w", stdout);
-     // #endif
-
      SpeedForce;
 }
