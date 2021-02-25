@@ -6,3 +6,5 @@ snippets
 *.out
 input.txt
 output.txt
+ans
+*.cpp:tests
