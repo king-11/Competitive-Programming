@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+vector<bool> isPrime;
+void seive(int n){
+    isPrime.assign(n+1,true);
+    isPrime[0] = isPrime[1] = false;
+    for(int i = 2; i * i <= n; i++){
+        if(isPrime[i]) {
+            for(int j = i * i; j <= n; j += i){
+                isPrime[j] = false;
+            }
+        }
+    }
+}
+]]></content>
+  <tabTrigger>seive</tabTrigger>
+  <description>seive of Eratosthenes</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

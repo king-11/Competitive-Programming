@@ -1,0 +1,23 @@
+<snippet>
+  <content><![CDATA[
+vector<int> primes;
+vi leastPrime(N+1);
+void seive(int n){
+    primes.reserve(n);
+    for(int i = 2; i <= n; i++)
+    {
+        if(leastPrime[i] == 0)
+        {
+            leastPrime[i] = i;
+            primes.eb(i);
+        }
+        for(int j = 0; j < (int)primes.size() && primes[j] <= leastPrime[i] && i*primes[j] <= n; ++j)
+            leastPrime[i * primes[j]] = primes[j];
+    }
+}
+]]></content>
+  <tabTrigger>factseive</tabTrigger>
+  <description>seive of Eratosthenes Factors</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>
