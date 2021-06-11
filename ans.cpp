@@ -3,7 +3,7 @@
  * @ Create Time: 2020-02-08 10:46:34
  * @ Modified by: Target_X
  * @ Modified time: 2021-02-08 10:50:10
- * @ Description: Har Har Mahadev
+ * @ Description: Jai Shree Ram
  */
 
 #include <bits/stdc++.h>
@@ -48,29 +48,49 @@
 #define MOD 1000000009
 
 // available snippets
-// phi, seive, exponentiation, gcd, extended euclid, dfs, path lca, factorization
-// kmp search, segtree, dsu, ordered set, power2
+// phi, seive, exponentiation, gcd, extended euclid, dfs, path lca,
+// factorization kmp search, segtree, dsu, ordered set, power2
 
 using namespace std;
 using namespace __gnu_pbds;
 
-template<typename T1,typename T2>istream& operator>>(istream& in,pair<T1,T2> &a){in>>a.x>>a.y;return in;}
-template<typename T1,typename T2>ostream& operator<<(ostream& out,pair<T1,T2> a){out<<a.x<<" "<<a.y;return out;}
-template<typename T,typename T1>T maxs(T &a,T1 b){if(b>a)a=b;return a;}
-template<typename T,typename T1>T mins(T &a,T1 b){if(b<a)a=b;return a;}
+template <typename T1, typename T2>
+istream &operator>>(istream &in, pair<T1, T2> &a) {
+  in >> a.f >> a.s;
+  return in;
+}
+template <typename T1, typename T2>
+ostream &operator<<(ostream &out, pair<T1, T2> a) {
+  out << a.f << " " << a.s;
+  return out;
+}
+template <typename T, typename T1> T maxs(T &a, T1 b) {
+  if (b > a)
+    a = b;
+  return a;
+}
+template <typename T, typename T1> T mins(T &a, T1 b) {
+  if (b < a)
+    a = b;
+  return a;
+}
 
 const int N = 3e5 + 11;
 
-int32_t main()
-{
-    SpeedForce;
+void solve() {
+}
 
-    //freopen("input.txt", "r", stdin);
-    //freopen("output.txt", "w", stdout);
-    
-    int t = 1; //cin >> t;
-    while(t--){
-       solve();
-    }
-    return 0;
+int32_t main() {
+  SpeedForce;
+
+  // freopen("input.txt", "r", stdin);
+  // freopen("output.txt", "w", stdout);
+
+  int t = 1;
+  // cin >> t;
+  while (t--) {
+    solve();
+    // cout << endl;
+  }
+  return 0;
 }
