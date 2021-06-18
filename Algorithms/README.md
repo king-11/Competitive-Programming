@@ -14,6 +14,12 @@
 
 T(n) = aT(n/b) + f(n)
 
+a >= 1, b >= 2 f(n) = theta(n^k)
+
+T(n) = theta(n^k) a < b^k
+T(n) = theta(n^k*log(a)) a = b^k
+T(n) = theta(n^logb(a)) a > b^k
+
 
 ## Non Deterministric Polynomial Time
 
