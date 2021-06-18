@@ -14,12 +14,27 @@
 
 T(n) = aT(n/b) + f(n)
 
-a >= 1, b >= 2 f(n) = theta(n^k)
+a >= 1, b >= 2
 
-T(n) = theta(n^k) a < b^k
-T(n) = theta(n^k*log(a)) a = b^k
-T(n) = theta(n^logb(a)) a > b^k
+T(n) = theta(n^logb(a)) if f(n) = O(n^(logb(a)-e)), e > 0
+T(n) = theta(n^logb(a)*log(n)) if f(n) = theta(n^(logb(a)))
+T(n) = theta(f(n)) f(n) = omega(n^(logb(a)+e)), e > 0, af(n/b) <= cf(n) c < 1
 
+Not all cases are covered by master's theorem
+
+**Warning** : (nlogn) is greater than (n) but not polynomially which is a must check for master's
+
+### Substitution Solving
+
+- guess work higher lower bound big omega and smaller upper bound for big o
+- changing variables to power of 2
+- adding in terms constant or variable as well
+
+### Recurrence Tree
+
+In a recursion tree, each node represents the cost of a single subproblem somewhere in the set of recursive function invocations. We sum the costs within each level of the tree to obtain a set of per-level costs, and then we sum all the per-level costs to determine the total cost of all levels of the recursion.
+
+A recursion tree is best used to generate a good guess, which you can then verify by the substitution method. When using a recursion tree to generate a good guess, you can often tolerate a small amount of “sloppiness,” since you will be verifying your guess later on.
 
 ## Non Deterministric Polynomial Time
 
