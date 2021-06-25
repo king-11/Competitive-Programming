@@ -21,3 +21,11 @@ Made up of Node Class having pointer[s] and data :
 ### Implememted
 
 - AVL Trees
+
+## [Range Query Trees](./Range_Query_Trees.md)
+
+### Implememted
+
+- Fenwick Range Query Point Update
+- Fenwick Range Update Point Query
+- Fenwick Range Update Range Query
