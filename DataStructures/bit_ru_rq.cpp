@@ -80,32 +80,9 @@ template <typename T, typename T1> T mins(T &a, T1 b) {
 
 const int N = 3e5 + 11;
 
-template <typename T>
-class Node {
-public:
-  T val;
-  int height;
-  Node *left, *right;
-  Node(T x) : val(x), left(NULL), right(NULL), height(0) {};
-};
-
-template <typename T>
-int getHeight(Node<T> *x){
-  return x == NULL ? -1 : x->height;
-}
-
-template <typename T>
-void setHeight(Node<T> *x){
-  x->height = max(getHeight(x->left), getHeight(x->right)) + 1;
-}
-
-template <typename T>
-bool isBalanced(Node<T> *x){
-  return x == NULL || abs(getHeight(x->left) - getHeight(x->right)) <= 1;
-}
-
-// range query & point update
-// add needs to be called considering zero based indexing
+// range query & range update
+// range_add needs to be called considering zero based indexing
+// internally one based
 class BinaryIndexedTree {
   vector<int> bit1, bit2;
   size_t n;
