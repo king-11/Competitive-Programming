@@ -118,7 +118,47 @@ def range_sum(l, r):
     return prefix_sum(r) - prefix_sum(l-1)
 ```
 
+## Segment Tree
 
+Segment tree can provide range query and range updates on operations alongwith lazy propagation when the function we need to find:
 
+- need not have inverse like binary indexed trees.
+- can be non commmunicative
 
+The drawback of segment tree is that it takes O(2*n) space in optimized version normally it take O(4*n). If we want to do optimized lazy propagation then it is O(3*n).
+
+It works on principle of combining nodes into a tree. Leaves represent our actual values. We can even think of it as a Heap where changes below are propagated up. We then split the array into two halves a[0…n/2] and a[n/2+1…n−1] and compute the function of each halve and store them. Each of these two halves in turn also split in half, their functional values are computed and stored.
+
+We start at the bottom level (the leaf vertices) and assign them their respective values. On the basis of these values, we can compute the values of the previous level, using the `combine` function which we define for our `struct` or `class`. And on the basis of those, we can compute the values of the previous, and repeat the procedure until we reach the root vertex.
+
+### Range Query and Point Update
+
+Functions will need includee
+
+- build function which iterates from `[n-1,1]` and combines value of its children `(i >> 1, i >> 1 | 1)`
+- range query function will iterate using two pointers `l` and `r`. first we increment them by `n` and then in each iteration keep on halving them. if `l` is odd we combine it with prior calculated `resl` values using combine (resl,tree[l++]) and if `r` is odd we combine it with `resr` using combine(tree[--r], resr).
+- for point update will first update `idx+=n` value and then from here only will keep updating the parent `idx >> 1` with childs `(idx, idx^1)`
+
+```cpp
+// build function
+for(int i = n - 1; i > 0; --i){
+  tree[i] = combine(tree[i << 1], tree[(i << 1) | 1]);
+}
+```
+
+```cpp
+// range query l and r zero based r not included in query
+for(l += n, r += n; l < r; l >>= 1, r >>= 1) {
+  // order important for non communicative combiner
+  if(l&1) resl = combine(resl, tree[l++]);
+  if(r&1) resr = combine(tree[--r], resr);
+}
+```
+
+```cpp
+// point update zero based indexing given to tree
+for(tree[idx += n] = val; idx > 1; idx >>= 1){
+  tree[idx >> 1] = combine(tree[idx], tree[idx^1]);
+}
+```
 
