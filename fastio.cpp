@@ -40,13 +40,7 @@
 #define minq priority_queue<int, vector<int>, greater<int>>
 #define maxq priority_queue<int, vector<int>, less<int>>
 #define endl "\n"
-#define scani(x) scanf("%lld", &x)
-#define scani2(x, y) scanf("%lld %lld", &x, &y)
-#define scani3(x, y, z) scanf("%lld %lld %lld", &x, &y, &z);
-#define print(x) printf("%lld ", x)
-#define println(x) printf("%lld\n", x)
 #define SpeedForce ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0)
-#define MOD 1000000009
 
 // available snippets
 // phi, seive, exponentiation, gcd, extended euclid, dfs, path lca,
@@ -76,7 +70,43 @@ template <typename T, typename T1> T mins(T &a, T1 b) {
   return a;
 }
 
+template <class T>
+void write(T x)
+{
+    if (x < 0)
+    {
+        putchar('-');
+        write(-x);
+        return;
+    }
+    if (x > 9)
+        write(x / 10);
+    putchar(x % 10 + '0');
+}
+
+template <class T>
+void writei(T x)
+{
+    write(x);
+    putchar(' ');
+}
+
+template <class T>
+void writeln(T x)
+{
+    write(x);
+    putchar('\n');
+}
+
+template <class T, class... Args>
+void write(T x, Args &... args)
+{
+    writei(x);
+    writei(args...);
+}
+
 const int N = 3e5 + 11;
+#define MOD 1000000007
 
 void solve() {
 }
