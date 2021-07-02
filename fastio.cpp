@@ -44,10 +44,12 @@
 
 // available snippets
 // phi, seive, exponentiation, gcd, extended euclid, dfs, path lca,
-// factorization kmp search, segtree, dsu, ordered set, power2
+// prime factor, kmp, segtree, dsu, ordered set, power2, array compression
 
 using namespace std;
 using namespace __gnu_pbds;
+
+template<class T> using ods = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
 
 template <typename T1, typename T2>
 istream &operator>>(istream &in, pair<T1, T2> &a) {
