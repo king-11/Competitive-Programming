@@ -13,6 +13,10 @@
 
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+
+using namespace std;
+using namespace __gnu_pbds;
 
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 #define repA(i, a, n) for (int i = a; i <= (n); ++i)
@@ -21,7 +25,7 @@
 #define all(c) c.begin(), c.end()
 
 #define int long long
-#define pii pair<int, int>
+using pii = std::pair<int, int>;
 #define pb push_back
 #define mp make_pair
 #define eb emplace_back
@@ -31,23 +35,20 @@
 #define present(c, x) (c.find(x) != c.end())
 #define cpresent(c, x) (find(all(c), x) != c.end())
 
-#define vi vector<int>
-#define vii vector<pii>
-#define si set<int>
-#define usi unordered_set<int>
-#define mi map<int, int>
-#define umi unordered_map<int, int>
-#define minq priority_queue<int, vector<int>, greater<int>>
-#define maxq priority_queue<int, vector<int>, less<int>>
+using vi = vector<int>;
+using vii = vector<pii>;
+using si = set<int>;
+using usi = unordered_set<int>;
+using mi = map<int, int>;
+using umi = unordered_map<int, int>;
+using minq = priority_queue<int, vector<int>, greater<int>>;
+using maxq = priority_queue<int, vector<int>, less<int>>;
 #define endl "\n"
 #define SpeedForce ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0)
 
 // available snippets
 // phi, seive, exponentiation, gcd, extended euclid, dfs, path lca,
-// prime factor, kmp, segtree, dsu, ordered set, power2, array compression
-
-using namespace std;
-using namespace __gnu_pbds;
+// prime factor, kmp, segtree, dsu, ordered set, power2, array compression, 2dbit, bit
 
 template<class T> using ods = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
 
@@ -73,44 +74,65 @@ template <typename T, typename T1> T mins(T &a, T1 b) {
 }
 
 template <class T>
+void read(T &x)
+{
+  char ch;
+  bool neg = false;
+  for (ch = getchar(); !isdigit(ch); ch = getchar())
+      neg = ch == '-';
+  x = ch - '0';
+  for (ch = getchar(); isdigit(ch); ch = getchar())
+      (x *= 10) += ch - '0';
+  x *= neg ? -1 : 1;
+}
+
+template <class T, class... Args>
+void read(T &x, Args&... args)
+{
+  read(x);
+  read(args...);
+}
+
+template <class T>
 void write(T x)
 {
-    if (x < 0)
-    {
-        putchar('-');
-        write(-x);
-        return;
-    }
-    if (x > 9)
-        write(x / 10);
-    putchar(x % 10 + '0');
+  if (x < 0)
+  {
+      putchar('-');
+      write(-x);
+      return;
+  }
+  if (x > 9)
+      write(x / 10);
+  putchar(x % 10 + '0');
 }
 
 template <class T>
 void writei(T x)
 {
-    write(x);
-    putchar(' ');
+  write(x);
+  putchar(' ');
 }
 
 template <class T>
 void writeln(T x)
 {
-    write(x);
-    putchar('\n');
+  write(x);
+  putchar('\n');
 }
 
 template <class T, class... Args>
-void write(T x, Args &... args)
+void write(T x, Args... args)
 {
-    writei(x);
-    writei(args...);
+  writei(x);
+  write(args...);
 }
 
 const int N = 3e5 + 11;
 #define MOD 1000000007
 
 void solve() {
+
 }
 
 int32_t main() {
