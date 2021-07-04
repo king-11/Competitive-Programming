@@ -7,4 +7,5 @@ snippets
 input.txt
 output.txt
 ans
+ans.cpp
 *.cpp:tests
