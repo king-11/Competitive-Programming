@@ -1,10 +1,10 @@
-/**
- * @ Author: Lakshya Singh
- * @ Create Time: 2020-02-08 10:46:34
- * @ Modified by: Target_X
- * @ Modified time: 2021-07-03 12:33:34
- * @ Description: Jai Shree Ram
- */
+/*
+* @Author: Lakshya Singh
+* @Date:   2021-07-22 17:07:46
+* @Last Modified by:   Lakshya Singh
+* @Last Modified time: 2021-07-24 09:57:28
+* @Description: Jai Shree Ram
+*/
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -14,9 +14,6 @@
 #pragma GCC optimize("Ofast")
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimize("unroll-loops")
-
-using namespace std;
-using namespace __gnu_pbds;
 
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 #define repA(i, a, n) for (int i = a; i <= (n); ++i)
@@ -35,14 +32,14 @@ using pii = std::pair<int, int>;
 #define present(c, x) (c.find(x) != c.end())
 #define cpresent(c, x) (find(all(c), x) != c.end())
 
-using vi = vector<int>;
-using vii = vector<pii>;
-using si = set<int>;
-using usi = unordered_set<int>;
-using mi = map<int, int>;
-using umi = unordered_map<int, int>;
-using minq = priority_queue<int, vector<int>, greater<int>>;
-using maxq = priority_queue<int, vector<int>, less<int>>;
+using vi = std::vector<int>;
+using vii = std::vector<pii>;
+using si = std::set<int>;
+using usi = std::unordered_set<int>;
+using mi = std::map<int, int>;
+using umi = std::unordered_map<int, int>;
+using minq = std::priority_queue<int, std::vector<int>, std::greater<int>>;
+using maxq = std::priority_queue<int, std::vector<int>, std::less<int>>;
 #define endl "\n"
 #define SpeedForce ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0)
 
@@ -50,82 +47,37 @@ using maxq = priority_queue<int, vector<int>, less<int>>;
 // phi, seive, exponentiation, gcd, extended euclid, dfs, path lca,
 // prime factor, kmp, segtree, dsu, ordered set, power2, array compression, 2dbit, bit
 
-template<class T> using ods = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
+using namespace std;
+using namespace __gnu_pbds;
+
+template <class T>
+using ods = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 template <typename T1, typename T2>
-istream &operator>>(istream &in, pair<T1, T2> &a) {
+istream &operator>>(istream &in, pair<T1, T2> &a)
+{
   in >> a.f >> a.s;
   return in;
 }
 template <typename T1, typename T2>
-ostream &operator<<(ostream &out, pair<T1, T2> a) {
+ostream &operator<<(ostream &out, pair<T1, T2> a)
+{
   out << a.f << " " << a.s;
   return out;
 }
-template <typename T, typename T1> T maxs(T &a, T1 b) {
+template <typename T, typename T1>
+T maxs(T &a, T1 b)
+{
   if (b > a)
     a = b;
   return a;
 }
-template <typename T, typename T1> T mins(T &a, T1 b) {
+template <typename T, typename T1>
+T mins(T &a, T1 b)
+{
   if (b < a)
     a = b;
   return a;
-}
-
-template <class T>
-void read(T &x)
-{
-  char ch;
-  bool neg = false;
-  for (ch = getchar(); !isdigit(ch); ch = getchar())
-      neg = ch == '-';
-  x = ch - '0';
-  for (ch = getchar(); isdigit(ch); ch = getchar())
-      (x *= 10) += ch - '0';
-  x *= neg ? -1 : 1;
-}
-
-template <class T, class... Args>
-void read(T &x, Args&... args)
-{
-  read(x);
-  read(args...);
-}
-
-template <class T>
-void write(T x)
-{
-  if (x < 0)
-  {
-      putchar('-');
-      write(-x);
-      return;
-  }
-  if (x > 9)
-      write(x / 10);
-  putchar(x % 10 + '0');
-}
-
-template <class T>
-void writei(T x)
-{
-  write(x);
-  putchar(' ');
-}
-
-template <class T>
-void writeln(T x)
-{
-  write(x);
-  putchar('\n');
-}
-
-template <class T, class... Args>
-void write(T x, Args... args)
-{
-  writei(x);
-  write(args...);
 }
 
 const int N = 3e5 + 11;
@@ -143,7 +95,8 @@ int32_t main() {
 
   int t = 1;
   // cin >> t;
-  while (t--) {
+  while (t--)
+  {
     solve();
     // cout << endl;
   }
