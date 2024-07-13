@@ -7,6 +7,7 @@
 */
 
 #include <bits/stdc++.h>
+#include <climits>
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <functional>
@@ -84,14 +85,35 @@ const int N = 3e5 + 11;
 #define MOD 1000000007
 
 void solve() {
+  int n, w;
+  cin >> n >> w;
+  vii v1(n);
+  tr(a, v1)
+  {
+    cin >> a.f >> a.s;
+  }
 
+  vector<vector<int>> dp(w + 1, vector<int>(n + 1));
+  for (int i = 1; i <= w; i++)
+  {
+    for (int j = 1; j <= n; j++)
+    {
+      if (i < v1[j - 1].f)
+      {
+        dp[i][j] = dp[i][j - 1];
+        continue;
+      }
+      dp[i][j] = max(v1[j - 1].s + dp[i - v1[j - 1].f][j - 1], dp[i][j - 1]);
+    }
+  }
+  cout << dp[w][n];
 }
 
 int32_t main() {
   SpeedForce;
 
-  // freopen("input.txt", "r", stdin);
-  // freopen("output.txt", "w", stdout);
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
 
   int t = 1;
   // cin >> t;
